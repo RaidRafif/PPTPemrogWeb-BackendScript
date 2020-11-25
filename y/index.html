@@ -45,6 +45,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ==" crossorigin="anonymous"></script>
     
+    <!-- Script inside HTML'S body -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         let app = firebase.app()
@@ -60,10 +61,12 @@
             const request = {
               uid: res.user.uid
             }
-            axios.post('http://localhost:5001/pptpemrogweeb/asia-southeast2/api/regis',request)
+
+            axios.post('http://localhost:5001/pptpemrogweeb/asia-southeast2/api/regis', request)
             .then(res => {
               window.location.href = './dashboard.html'
             })
+
           }).catch(error => {
             console.log(error)
           })
